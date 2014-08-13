@@ -7,7 +7,6 @@
     "test": "gulp compile:templates && browserify -t liveify --extension=.ls test/*.ls | testling"
   },
   "dependencies": {
-    "browser-request": "^0.3.2",
     "browserify": "^4.1.10",
     "express": "^3.4.x",
     "gulp": "^3.5.2",
@@ -21,6 +20,7 @@
     "gulp-stylus": ">= 0.0.12",
     "gulp-uglify": ">= 0.2.1",
     "gulp-util": "^2.2.14",
+    "jquery": "^2.1.1",
     "liveify": "^0.4.0",
     "minimist": "^0.1.0",
     "nib": "~1.0.2",
