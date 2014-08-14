@@ -10,9 +10,7 @@ module.exports = ->
   yPos = windowHeight / 3
 
   if windowHeight >= navLimit
-    logo.fadeOut!
     body.addClass "fixed"
   else
-    logo.fadeIn!
     logo.css top: yPos
     body.removeClass "fixed"
