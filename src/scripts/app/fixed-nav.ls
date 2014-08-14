@@ -6,6 +6,10 @@ navLimit = nav.position!.top
 
 module.exports = ->
   windowHeight = win.scrollTop!
+  windowWidth = win.width!
+
+  if windowWidth <= 400
+    return false
 
   if windowHeight >= navLimit
     body.addClass "fixed"
