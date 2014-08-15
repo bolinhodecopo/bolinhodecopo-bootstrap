@@ -4,6 +4,7 @@
     "start": "node ./server.js",
     "watch": "gulp",
     "compile": "gulp build -uc",
+    "build-prod": "gulp build -ucp",
     "test": "gulp compile:templates && browserify -t liveify --extension=.ls test/*.ls | testling"
   },
   "dependencies": {
