@@ -1,15 +1,16 @@
 ul.posts-list
-  li.post
-    article
-      h1.title Post teste
-      p bla bla bla bla
-      p lorem ipsum
-      p
-        img(src="http://media.tumblr.com/1e54fd47ccc14760bb8d5180c5dc4bd2/tumblr_inline_n8tkjfMHbB1rd2f9j.jpg")
-      time(datetime="{TimeAgo}")
-        a(href="{Permalink}") Há 4 semanas
-      section.caption.group
-        a.disquscomments(href="{Permalink}#disqus_thread") 0 Comments
+  - for (var x = 0; x < 3; x++)
+    li.post
+      article
+        h1.title Post teste
+        p bla bla bla bla
+        p lorem ipsum
+        p
+          img(src="http://media.tumblr.com/1e54fd47ccc14760bb8d5180c5dc4bd2/tumblr_inline_n8tkjfMHbB1rd2f9j.jpg")
+        time(datetime="{TimeAgo}")
+          a(href="{Permalink}") Há 4 semanas
+        section.caption.group
+          a.disquscomments(href="{Permalink}#disqus_thread") 0 Comments
   li.posts-pagination.clearfix
     a.left(href="{PreviousPage}") &laquo; Anterior
     a.right(href="{NextPage}") Próxima &raquo;
