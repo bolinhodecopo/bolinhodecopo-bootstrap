@@ -33,8 +33,18 @@ var path = {
 };
 
 gulp.task('compile:html', function() {
+  var locals = {
+    imagesPath: '/images'
+  };
+
+  if (argv.p) {
+    locals.imagesPath = 'http://assets.bolinhodecopo.art.br/images';
+  }
+
   gulp.src([path.jade, '!'+path.layouts, '!'+path.scripts.modules.templates])
-    .pipe(jade())
+    .pipe(jade({
+      locals: locals
+    }))
     .pipe(gulp.dest('./build/'))
 });
 
