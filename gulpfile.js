@@ -12,6 +12,7 @@ var rename = require('gulp-rename');
 var argv = require('minimist')(process.argv.slice(2));
 var minifyCSS = require('gulp-minify-css');
 var defineModule = require('gulp-define-module');
+var s3 = require('gulp-s3');
 
 var path = {
   layouts: './src/layouts/**/*.jade',
@@ -106,6 +107,12 @@ gulp.task('compress:png', function() {
 });
 
 gulp.task('compress:images', ['compress:jpg', 'compress:png']);
+
+gulp.task('deploy', function() {
+  config = require('./aws.json');
+  gulp.src('./build/**')
+  .pipe(s3(config));
+});
 
 gulp.task('build', ['compile:html', 'compile:css', 'browserify:app', 'concat:scripts:vendor', 'compress:images']);
 
