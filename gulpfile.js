@@ -35,11 +35,17 @@ var path = {
 
 gulp.task('compile:html', function() {
   var locals = {
-    imagesPath: '/images'
+    path: {
+      root: '/',
+      assets: {
+        images: '/images'
+      }
+    }
   };
 
   if (argv.p) {
-    locals.imagesPath = 'http://assets.bolinhodecopo.art.br/images';
+    locals.path.root = 'http://bolinhodecopo.art.br';
+    locals.path.assets.images = 'https://s3.amazonaws.com/bolinhodecopo/images';
   }
 
   gulp.src([path.jade, '!'+path.layouts, '!'+path.scripts.modules.templates])
