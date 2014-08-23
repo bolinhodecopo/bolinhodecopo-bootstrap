@@ -50,6 +50,7 @@ gulp.task('compile:html', function() {
 
   gulp.src([path.jade, '!'+path.layouts, '!'+path.scripts.modules.templates])
     .pipe(jade({
+      pretty: true,
       locals: locals
     }))
     .pipe(gulp.dest('./build/'))
